@@ -13,19 +13,29 @@ export const NGOModal: React.FC<NGOModalProps> = ({ ngo, onClose }) => {
 
   if (!ngo) return null;
 
-  const emailTemplate = `Subject: Strategic Digital Modernization Proposal for ${ngo.name} Ethiopia
+  const emailTemplate = `Subject: Proposal for Operational Digitalization: Streamlining Resource & Team Management for ${ngo.name}
 
 Dear ${ngo.name} Leadership Team,
 
-I am writing to you on behalf of Dir Developers, an Ethiopian technology firm dedicated to supporting the non-profit sector through specialized digital transformation and custom software solutions.
+I am writing to you on behalf of Dir Developers, an Ethiopian technology firm dedicated to empowering the non-profit sector through specialized digital transformation and custom software solutions.
 
-We understand the unique operational challenges faced by international organizations. Our mission is to empower the Ethiopian branch of ${ngo.name} by developing bespoke digital tools—ranging from automated resource management systems to comprehensive project tracking platforms—designed to eliminate manual paperwork and enhance operational transparency.
+We understand that for organizations like ${ngo.name}, the focus should remain on your core mission rather than the administrative burden of manual tracking. Our mission is to support your Ethiopian operations by developing bespoke digital tools designed to eliminate paperwork and enhance organizational transparency.
 
-As a local partner, we prioritize balancing high-level innovation with the specific budgetary considerations of NGOs. We offer highly competitive, cost-effective pricing structures specifically designed to be accessible for organizations dedicated to Ethiopia's development.
+Beyond standard software, we propose a centralized system tailored to the specific needs of an NGO, including:
 
-We would welcome the opportunity to present a portfolio of our previous work and discuss how we can specifically support ${ngo.name}'s Ethiopian operations in transitioning to a more efficient, data-driven environment.
+Automated Inventory & Asset Management: Real-time tracking of field equipment, office supplies, and aid distribution to ensure every resource is accounted for.
 
-Are you available for a brief introductory call or a meeting at your Addis Ababa office this week to explore this further?
+Integrated Employee & Volunteer Management: A digital directory and scheduling tool to manage staff contracts, performance, and volunteer deployments across different regions.
+
+Grant & Project Milestone Tracking: A transparent dashboard to monitor project progress and budget utilization, making reporting to donors faster and more accurate.
+
+Digital Document Archive: A secure, searchable cloud-based repository for legal documents, MoUs, and field reports to ensure data is never lost.
+
+As a local partner based in Addis Ababa, we prioritize balancing high-level innovation with the specific budgetary considerations of NGOs. We offer highly competitive, cost-effective pricing structures specifically designed to be accessible for organizations dedicated to Ethiopia's development.
+
+We would welcome the opportunity to present a portfolio of our previous work and discuss how we can specifically support ${ngo.name}’s Ethiopian operations in transitioning to a more efficient, data-driven environment.
+
+Are you available for a brief introductory call or a meeting at your office this week to explore this further?
 
 Best regards,
 
@@ -41,7 +51,7 @@ Phone: 0942787568`;
   };
 
   const handleEmail = () => {
-    const subject = encodeURIComponent(`Strategic Digital Modernization Proposal for ${ngo.name} Ethiopia`);
+    const subject = encodeURIComponent(`Proposal for Operational Digitalization: Streamlining Resource & Team Management for ${ngo.name}`);
     const body = encodeURIComponent(emailTemplate);
     const recipient = ngo.email || '';
     window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
